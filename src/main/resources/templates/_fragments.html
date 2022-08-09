@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title   th:replace="${title}">详情</title>
+    <link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
+    <link rel="stylesheet" href="../static/css/mystyle.css" th:href="@{/css/mystyle.css}">
+    <link rel="icon"       href="../static/images/logo.png" th:href="@{/images/logo.png}">
+    <link rel="stylesheet" href="../static/css/tocbot.css" th:href="@{/css/tocbot.css}">
+    <link rel="stylesheet" href="../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
+    <link rel="stylesheet" href="../static/css/tocbot.css" th:href="@{/css/tocbot.css}">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css'>
+</head>
+<body>
+<!--导航栏-->
+<nav th:fragment="menu(n)"  class="ui inverted attached segment ">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <a href="#" th:href="@{/}"> <h2 class="ui teal header item" >Jieni</h2></a>
+            <!-- <a href="#" class="ui black  item menu taggle button m-moblie-show m-inline-block " >
+              <i class="sidebar icon "></i>
+           </a> -->
+            <a href="#" th:href="@{/}" class="ui teal item m-moblie-hide m-item" th:classappend="${n==1} ? 'active'"><i class=" home icon"></i>首页</a>
+            <a href="#" th:href="@{/types/-1}" class="ui teal item m-moblie-hide m-item" th:classappend="${n==2} ? 'active'"><i class=" idea icon"></i>分类</a>
+            <a href="#" th:href="@{/tags/-1}" class="ui teal item m-moblie-hide m-item" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
+            <a href="#" th:href="@{/archives}" class="ui teal item m-moblie-hide m-item" th:classappend="${n==4} ? 'active'"><i class="file icon"></i>归档</a>
+            <a href="#" th:href="@{/about}" class="ui teal item m-moblie-hide m-item" th:classappend="${n==5} ? 'active'"><i class="info icon"></i>关于我</a>
+
+            <div class="ui right item input m-moblie-hide m-item">
+                <form action="#" name="search" th:action="@{/search}"  method="post" target="_blank">
+                <div class="ui icon inverted transparent input">
+                    <input type="text"  name="query" placeholder="Search......"th:value="${query}">
+                    <!--提交-->
+                    <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                </div>
+                </form>
+            </div>
+            <a href="#" class="ui black  item menu taggle button m-moblie-show  " >
+                <i class="sidebar icon "></i>
+            </a>
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- 底部 -->
+<footer th:fragment="footer" class="ui  inverted vertical segment m-fr-position">
+    <div class="ui center aligned m-padded-tb-huge container">
+        <div class="ui   inverted divided mobile stackable reversed grid ">
+            <div class="three wide column ">
+                <img src="../static/images/wcrecode.jpg"  th:src="@{/images/wcrecode.jpg}" class="ui rounded image centered m-image-size" alt="wechat" style="width:120px"/>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui header inverted m-text-spaced m-text-thin">最新博客</h4>
+                <div id="newblog-container">
+                    <div class="ui inverted link list"  th:fragment="newblogList">
+                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog : ${newblogs}" th:text="${blog.title}"> 用户故事</a>
+                        <!--/*-->
+                        <a href="#" class="item">用户故事</a>
+                        <a href="#" class="item">用户故事</a>
+                        <!--*/-->
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="three wide column">
+                <h4 class="ui header inverted m-text-spaced m-text-thin">联系我们</h4>
+                <div class="ui inverted  link list">
+                    <a href="#" target="_blank" class="item" th:text="#{index.email}"><span>email:</span>524710692@qq.com</a>
+                    <!--/*-->
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <!--*/-->
+                </div>
+            </div>
+            <div class="seven wide column ">
+                <h4 class="ui header inverted m-text-spaced m-text-thin">关于Blog</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">这是我的个人博客，学习前端梦想开始实践的阶段开始了！分享我的学习笔记、历程.......</a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="ui inverted section divider ">
+            <p class="m-text-thin m-text-lined m-opacity-mini m-text-spaced">Copyright © 2022-2030 Jieni Designed by Jieni</p>
+        </div>
+    </div>
+</footer>
+
+<th:block th:fragment="script">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+    <script src="../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.js" th:src="@{/lib/qrcode/qrcode.js}"></script>
+    <script src="../static/lib/waypoint/jquery.waypoints.min.js" th:src="@{/lib/waypoint/jquery.waypoints.min.js}"></script>
+    <script>
+        $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    </script>
+</th:block>
+
+</body>
+</html>

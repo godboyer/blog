@@ -1,0 +1,172 @@
+.m-padded  {
+    padding: 2em;
+}
+.m-padded-zore {
+    padding: 0;
+}
+.m-padded-mini {
+    padding: 0.2em !important;
+}
+.m-padded-tiny {
+    padding: 0.3em !important;
+}
+.m-padded-big {
+    padding: 3em !important;
+}
+.m-padded-tb-mini {
+    padding-top: 0.2em !important;
+    padding-bottom:0.2em !important;
+}
+.m-padded-tb-tiny {
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+}
+.m-padded-tb-small {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+.m-padded-tb-large {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.m-padded-tb-big {
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+.m-padded-tb-huge {
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+.m-padded-tb-massive {
+    padding-top: 10em !important;
+    padding-bottom: 10em !important;
+}
+.m-padded-lr {
+    padding-right: 3em !important;
+    padding-left: 3em !important;
+}
+
+/* -----------字体--------- */
+/*@font-face {*/
+/*    src: url(static/fonts/fontawesome-webfont.woff);*/
+/*}*/
+.m-text {
+    /*font-family: "Segoe MDL2 Assets";*/
+    /*font-size: 15px;*/
+    letter-spacing: 1px !important;
+    line-height: 1.8;
+    font-weight: 400 !important;
+}
+.m-text-thin {
+    font-weight: 400 !important;
+}
+.m-text-spaced {
+    letter-spacing: 1px !important;
+
+}
+.m-text-lined {
+    line-height: 1.8;
+}
+
+.m-text-center {
+    text-align: center;
+}
+
+
+
+/* ---------display--------- */
+.m-backgd {
+    background: url(../images/bj.jpg) no-repeat center;
+    background-size: auto;
+    opacity: 0.86579;
+    z-index: -1;
+   
+}
+.m-inline-block {
+    display: inline-block;
+}
+
+.m-image-size {
+    width: 11.5rem !important;
+}
+
+.m-container {
+    max-width: 72em !important;
+    margin: auto !important;
+}
+.m-container-small {
+    max-width: 100em !important;
+    margin: auto !important;
+}
+
+/* ----------margin--------- */
+.m-margin  {
+    margin: 2em;
+}
+.m-margin-tb-tiny {
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+.m-margin-tb-big {
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
+}
+.m-margin-top-small {
+    margin-top: 0.5em !important;
+}
+.m-margin-top-big {
+    margin-top: 2em !important;
+}
+.m-margin-top-large {
+    margin-top: 3em !important;
+}
+
+.m-margin-bottom {
+    margin-bottom: 0 !important;
+}
+.m-margin-bottom-big {
+    margin-bottom: 2em !important;
+}
+
+/* ------------opacity----------- */
+
+.m-opacity-mini {
+    opacity: 0.9 !important;
+}
+
+/* --------color------- */
+.m-color {
+    color: #333 !important;
+}
+.m-back {
+    color: #00B5AD !important;
+}
+.m-moblie-show {
+    display: none !important;
+}
+
+/*------------ position---------- */
+.m-fixed {
+    position: fixed !important;
+}
+.m-fr-position {
+    position: relative;
+    bottom: 0 !important;
+}
+.m-right-float {
+    float: right;
+    right:0;
+}
+.m-right-bottom {
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 99 !important;
+}
+@media screen and (max-width: 768px) {
+    .m-moblie-hide {
+        display: none !important ;
+    }
+    .m-moblie-show {
+        display: block !important;
+    }
+}
